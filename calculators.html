@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Igris Capital — Capital & Wealth Advisory">
+<title>Calculators | Igris Capital</title>
+<link rel="icon" type="image/png" href="assets/igris-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body>
+<div class="progress" id="progress"></div><header class="site-header" id="siteHeader">
+<a aria-label="Igris Capital home" class="brand" href="#home">
+<span aria-hidden="true" class="brand-mark">
+<svg role="img" viewbox="0 0 72 104">
+<circle cx="36" cy="15" r="14"></circle><rect height="4" rx="2" width="16" x="28" y="28"></rect>
+<rect height="4.5" rx="2.25" width="20" x="26" y="31"></rect>
+<path d="M32 35.5C30 38 28 41 28 44c-2 4-4 10-6 18h28c-2-8-4-14-6-18 0-3-2-6-4-8.5z"></path>
+<rect height="7" rx="3.5" width="40" x="16" y="62"></rect><rect height="10" rx="5" width="54" x="9" y="69"></rect><rect height="7" rx="3.5" width="60" x="6" y="79"></rect>
+</svg>
+</span>
+<span><strong>Igris</strong><b>Capital</b><small>Capital &amp; Wealth Advisory</small></span>
+</a>
+<nav aria-label="Primary" class="desktop-nav">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a>
+<a href="#calculators">Calculators</a><a href="#contact">Contact</a>
+<a class="nav-external" href="https://terminal.igriscapital.in" rel="noopener" target="_blank">Terminal ↗</a>
+</nav>
+<div class="header-actions">
+<button aria-label="Toggle dark mode" class="theme-btn" id="themeBtn">◐</button>
+<a class="btn btn-primary small" href="https://calendly.com/joy-igriscapital/30min" rel="noopener" target="_blank">Book a Call</a>
+<button aria-label="Open menu" class="menu-btn" id="menuBtn"><i></i><i></i><i></i></button>
+</div>
+</header><div class="mobile-menu" id="mobileMenu">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a>
+<a href="#calculators">Calculators</a><a href="#contact">Contact</a>
+<a href="https://terminal.igriscapital.in" rel="noopener" target="_blank">Igris Terminal ↗</a>
+<a class="mobile-book" href="https://calendly.com/joy-igriscapital/30min" rel="noopener" target="_blank">Book Free Consultation</a>
+</div><main><section class="page-title"><div class="container"><div class="eyebrow"><span></span> Financial tools</div><h1>Calculate before<br><em>you commit.</em></h1><p>Planning estimates for SIPs, lumpsum investments, goals and loans. Market-linked returns are not guaranteed and actual loan terms depend on the lender.</p></div></section><section class="calculator-section" id="calculators">
+<div class="container">
+<div class="section-head reveal"><div><div class="eyebrow"><span></span> Financial tools</div><h2>Calculate before<br/><em>you commit.</em></h2></div><p>These are estimates for planning, not guarantees. Market-linked returns can vary and actual loan terms depend on the lender.</p></div>
+<div class="calc-shell reveal">
+<div class="calc-tabs" role="tablist">
+<button class="calc-tab active" data-calc="sip">SIP</button><button class="calc-tab" data-calc="lumpsum">Lumpsum</button><button class="calc-tab" data-calc="goal">Goal Planner</button><button class="calc-tab" data-calc="emi">EMI</button>
+</div>
+<div class="calc-panel active" id="calc-sip">
+<div class="calc-inputs"><div class="calc-title"><small>01 · SIP RETURNS</small><h3>Monthly investing, compounded.</h3><p>Estimate future value of a monthly SIP.</p></div>
+<label>Monthly investment <div class="input-wrap"><span>₹</span><input id="sipAmount" min="100" step="500" type="number" value="5000"/></div></label>
+<label>Expected annual return <div class="input-wrap"><input id="sipRate" max="30" min="0.1" step="0.1" type="number" value="12"/><span>%</span></div></label>
+<label>Investment period <div class="input-wrap"><input id="sipYears" max="40" min="1" step="1" type="number" value="10"/><span>yrs</span></div></label>
+<label class="toggle-line"><input checked="" id="sipInflationOn" type="checkbox"/><span>Adjust for inflation</span></label>
+<label id="sipInflationBox">Inflation rate <div class="input-wrap"><input id="sipInflation" max="15" min="0" step="0.1" type="number" value="6"/><span>%</span></div></label>
+</div>
+<div class="calc-result"><div class="result-main"><small>ESTIMATED CORPUS</small><strong id="sipTotal">₹0</strong><span>nominal future value</span></div><div class="result-grid"><div><small>Invested</small><b id="sipInvested">₹0</b></div><div><small>Returns</small><b id="sipReturns">₹0</b></div><div><small>Inflation-adjusted</small><b id="sipReal">₹0</b></div></div><div class="mini-chart" id="sipChart"></div><p class="calc-note">⚠ Estimated projection only. Mutual fund investments are subject to market risks.</p></div>
+</div>
+<div class="calc-panel" id="calc-lumpsum">
+<div class="calc-inputs"><div class="calc-title"><small>02 · LUMPSUM</small><h3>See what one investment can become.</h3><p>Estimate compound growth over time.</p></div>
+<label>Investment amount <div class="input-wrap"><span>₹</span><input id="lsAmount" min="100" step="1000" type="number" value="100000"/></div></label>
+<label>Expected annual return <div class="input-wrap"><input id="lsRate" max="30" min="0.1" step="0.1" type="number" value="12"/><span>%</span></div></label>
+<label>Investment period <div class="input-wrap"><input id="lsYears" max="40" min="1" type="number" value="10"/><span>yrs</span></div></label>
+<label class="toggle-line"><input checked="" id="lsInflationOn" type="checkbox"/><span>Adjust for inflation</span></label>
+<label id="lsInflationBox">Inflation rate <div class="input-wrap"><input id="lsInflation" max="15" min="0" step="0.1" type="number" value="6"/><span>%</span></div></label>
+</div>
+<div class="calc-result"><div class="result-main"><small>ESTIMATED CORPUS</small><strong id="lsTotal">₹0</strong><span>nominal future value</span></div><div class="result-grid"><div><small>Invested</small><b id="lsInvested">₹0</b></div><div><small>Returns</small><b id="lsReturns">₹0</b></div><div><small>Wealth multiple</small><b id="lsMultiple">0x</b></div><div><small>Inflation-adjusted</small><b id="lsReal">₹0</b></div></div><p class="calc-note">⚠ Estimated projection only. Past performance does not guarantee future results.</p></div>
+</div>
+<div class="calc-panel" id="calc-goal">
+<div class="calc-inputs"><div class="calc-title"><small>03 · GOAL PLANNER</small><h3>Work backwards from the goal.</h3><p>Estimate the monthly SIP required to reach a target corpus.</p></div>
+<label>Target corpus <div class="input-wrap"><span>₹</span><input id="goalTarget" min="1000" step="5000" type="number" value="1000000"/></div></label>
+<label>Expected annual return <div class="input-wrap"><input id="goalRate" max="30" min="0.1" step="0.1" type="number" value="12"/><span>%</span></div></label>
+<label>Time to goal <div class="input-wrap"><input id="goalYears" max="40" min="1" type="number" value="10"/><span>yrs</span></div></label>
+<label class="toggle-line"><input checked="" id="goalInflationOn" type="checkbox"/><span>Adjust target for inflation</span></label>
+<label id="goalInflationBox">Inflation rate <div class="input-wrap"><input id="goalInflation" max="15" min="0" step="0.1" type="number" value="6"/><span>%</span></div></label>
+</div>
+<div class="calc-result"><div class="result-main"><small>REQUIRED MONTHLY SIP</small><strong id="goalSip">₹0</strong><span>estimated monthly contribution</span></div><div class="result-grid"><div><small>Goal corpus</small><b id="goalCorpus">₹0</b></div><div><small>Inflation-adjusted target</small><b id="goalInflated">₹0</b></div><div><small>Total invested</small><b id="goalInvested">₹0</b></div><div><small>Estimated returns</small><b id="goalReturns">₹0</b></div></div><p class="calc-note">⚠ Actual SIP requirements vary with investment performance.</p></div>
+</div>
+<div class="calc-panel" id="calc-emi">
+<div class="calc-inputs"><div class="calc-title"><small>04 · EMI CALCULATOR</small><h3>Know the repayment before applying.</h3><p>Indicative monthly EMI for a loan.</p></div>
+<label>Loan amount <div class="input-wrap"><span>₹</span><input id="emiAmount" min="1000" step="5000" type="number" value="1000000"/></div></label>
+<label>Annual interest rate <div class="input-wrap"><input id="emiRate" max="36" min="0.1" step="0.1" type="number" value="9"/><span>%</span></div></label>
+<label>Loan tenure <div class="input-wrap"><input id="emiYears" max="30" min="1" type="number" value="10"/><span>yrs</span></div></label>
+<a class="btn btn-primary full" href="contact.html">Discuss Your Loan →</a>
+</div>
+<div class="calc-result"><div class="result-main"><small>MONTHLY EMI</small><strong id="emiMonthly">₹0</strong><span>indicative repayment</span></div><div class="result-grid"><div><small>Principal</small><b id="emiPrincipal">₹0</b></div><div><small>Total interest</small><b id="emiInterest">₹0</b></div><div><small>Total payable</small><b id="emiTotal">₹0</b></div></div><p class="calc-note">⚠ EMI is indicative. Actual EMI depends on the lender, rate, fees and approved terms.</p></div>
+</div>
+</div>
+</div>
+</section></main><footer>
+<div class="container footer-top">
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewbox="0 0 72 104"><use href="#footerPawn"></use></svg></span><span><strong>Igris</strong><b>Capital</b><small>Capital &amp; Wealth Advisory</small></span></a>
+<div><small>AMFI Registered Mutual Fund Distributor · ARN-356525<br/>POSP Life &amp; Non-Life Insurance · IRDAI Compliant<br/>MSME Registered · UDYAM-MH-33-0636264</small></div>
+<a class="btn btn-primary" href="https://calendly.com/joy-igriscapital/30min" rel="noopener" target="_blank">Book Free Call →</a>
+</div>
+<div class="container footer-bottom"><span>© 2026 Igris Capital. All rights reserved.</span><span>Information on this website is general in nature and subject to the legal disclosures above.</span></div>
+</footer>
+<script src="stats.js"></script><script src="app.js"></script></body></html>

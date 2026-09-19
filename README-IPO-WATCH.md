@@ -1,4 +1,4 @@
-# Igris Capital — IPO Watch data layer
+# Igris Capital - IPO Watch data layer
 
 The website is separated into two parts:
 

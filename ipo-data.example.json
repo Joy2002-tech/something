@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "lastUpdated": "2026-09-19T10:00:00+05:30",
+    "timezone": "Asia/Kolkata"
+  },
+  "mainboard": [
+    {
+      "company": "Example Limited",
+      "category": "Mainboard",
+      "exchange": "NSE",
+      "dates": "23–25 Sep 2026",
+      "priceBand": "₹385–405",
+      "issuePrice": 405,
+      "issueSize": "₹405 Cr",
+      "gmp": 64,
+      "gmpSource": "Permitted market-data source",
+      "subscription": "12.40x",
+      "sourceUrl": "https://www.nseindia.com/market-data/all-upcoming-issues-ipo",
+      "updatedAt": "2026-09-19T10:00:00+05:30"
+    }
+  ],
+  "sme": [],
+  "performance": [],
+  "unlisted": [
+    {
+      "company": "Example Unlisted Co.",
+      "referencePrice": 1250,
+      "status": "Indicative",
+      "note": "Example only. Replace with a permitted/verified reference price.",
+      "sourceUrl": "",
+      "updatedAt": "2026-09-19T10:00:00+05:30"
+    }
+  ]
+}

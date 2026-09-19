@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "lastUpdated": null,
+    "timezone": "Asia/Kolkata",
+    "notice": "IPO exchange data should be sourced from permitted/official feeds. GMP and unlisted prices are unofficial/indicative and should carry their own source and timestamp."
+  },
+  "mainboard": [],
+  "sme": [],
+  "performance": [],
+  "unlisted": []
+}

@@ -59,7 +59,7 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.08});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-/* Calculator engine — based on the original Igris formulas. */
+/* Calculator engine - based on the original Igris formulas. */
 function calcSIP(){
   const P=Math.max(100,num("sipAmount",5000));
   const rate=Math.max(0.01,num("sipRate",12));

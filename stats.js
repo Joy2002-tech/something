@@ -1,4 +1,4 @@
-// IGRIS CAPITAL — EDITABLE STATS
+// IGRIS CAPITAL - EDITABLE STATS
 // Edit numbers here and they update across the website.
 const IGRIS_STATS = {
   aum: "₹20K+",

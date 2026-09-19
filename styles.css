@@ -57,3 +57,28 @@ footer{border-top:1px solid var(--line);padding:40px 0 20px;background:#050b11}.
 .contact-copy h2{font-size:clamp(38px,4vw,54px)}
 .about-copy h2{font-size:clamp(36px,4vw,52px)}
 @media(max-width:720px){.page-title h1{font-size:44px}.service-detail-main h2{font-size:36px}.contact-copy h2{font-size:40px}}
+
+
+/* IPO Watch live data layer */
+.live-feed-status{display:inline-flex;margin-top:18px;padding:7px 11px;border:1px solid var(--line);border-radius:999px;font-size:10px;color:var(--muted);background:var(--card)}
+.ipo-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px;background:var(--card)}
+.ipo-table{width:100%;border-collapse:collapse;min-width:900px}
+.ipo-table th,.ipo-table td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:12px;vertical-align:middle}
+.ipo-table th{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);background:var(--bg2);white-space:nowrap}
+.ipo-table tr:last-child td{border-bottom:0}
+.ipo-table td strong{display:block;color:var(--text)}
+.ipo-table td small{display:block;margin-top:4px;font-size:9px;color:var(--muted)}
+.ipo-table a,.live-meta a{color:var(--accent);text-decoration:none;font-weight:700}
+.ipo-table a:hover,.live-meta a:hover{text-decoration:underline}
+.data-empty{padding:26px;text-align:center;color:var(--muted);font-size:12px}
+.unlisted-live-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.unlisted-live-card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:24px;min-height:180px}
+.unlisted-live-card .live-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.unlisted-live-card small{font-size:9px;letter-spacing:1.4px;color:var(--muted);font-weight:800}
+.unlisted-live-card .live-top span{font-size:9px;color:var(--accent)}
+.unlisted-live-card h3{font-size:20px;margin:18px 0 8px}
+.unlisted-live-card .live-price{font:800 25px/1.2 "Manrope";color:var(--accent)}
+.unlisted-live-card p{font-size:11px;color:var(--muted);line-height:1.7;margin:12px 0}
+.live-meta{display:flex;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--line);font-size:9px;color:var(--muted)}
+@media(max-width:900px){.unlisted-live-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.unlisted-live-grid{grid-template-columns:1fr}.ipo-table{min-width:760px}}

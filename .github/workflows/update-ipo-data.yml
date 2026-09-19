@@ -18,7 +18,7 @@ jobs:
           python-version: '3.x'
       - name: Fetch permitted IPO feed
         env:
-          IPO_FEED_URL: ${{ secrets.IPO_FEED_URL }}
+          IPO_FEED_URL: ${{https://www.investorgain.com}}
         run: python scripts/update_ipo_data.py
       - name: Commit updated data
         run: |

@@ -80,22 +80,23 @@ function drawChart(P,rate,years){
   for(let i=1;i<=steps;i++){const y=i*(years/steps),n=Math.round(y*12);const fv=P*((Math.pow(1+r,n)-1)/r)*(1+r),inv=P*n;data.push({y:Math.round(y),fv,inv});max=Math.max(max,fv)}
   data.forEach(d=>{const w=document.createElement("div");w.className="bar-wrap";const ret=document.createElement("div"),inv=document.createElement("div"),lab=document.createElement("div");ret.className="bar-returns";inv.className="bar-invested";lab.className="bar-yr";ret.style.height=Math.max(2,(d.fv-d.inv)/max*100)+"px";inv.style.height=Math.max(2,d.inv/max*100)+"px";lab.textContent=d.y+"y";w.append(ret,inv,lab);chart.append(w)});
 }
+function drawPairChart(id, firstLabel, firstValue, secondLabel, secondValue){const chart=$(id);if(!chart)return;chart.innerHTML="";const max=Math.max(1,firstValue,secondValue);[[firstLabel,firstValue,"bar-invested"],[secondLabel,secondValue,"bar-returns"]].forEach(([label,value,cls])=>{const wrap=document.createElement("div");wrap.className="bar-wrap";const bar=document.createElement("div");bar.className=cls;bar.style.height=Math.max(3,value/max*100)+"px";const lab=document.createElement("div");lab.className="bar-yr";lab.textContent=label;wrap.append(bar,lab);chart.append(wrap)})}
 function calcLS(){
   const P=Math.max(100,num("lsAmount",100000)), rate=Math.max(0.01,num("lsRate",12)), years=Math.max(1,num("lsYears",10));
   const fv=P*Math.pow(1+rate/100,years), on=$("lsInflationOn")?.checked, inf=on?Math.max(0,num("lsInflation",6)):0, real=fv/Math.pow(1+inf/100,years);
-  $("lsTotal").textContent=money(fv);$("lsInvested").textContent=money(P);$("lsReturns").textContent=money(fv-P);$("lsMultiple").textContent=(fv/P).toFixed(1)+"x";$("lsReal").textContent=money(real);
+  $("lsTotal").textContent=money(fv);$("lsInvested").textContent=money(P);$("lsReturns").textContent=money(fv-P);$("lsMultiple").textContent=(fv/P).toFixed(1)+"x";$("lsReal").textContent=money(real);drawPairChart("lsChart","Invested",P,"Returns",Math.max(0,fv-P));
 }
 function calcGoal(){
   const target=Math.max(1000,num("goalTarget",1000000)), rate=Math.max(0.01,num("goalRate",12)), years=Math.max(1,num("goalYears",10));
   const on=$("goalInflationOn")?.checked, inf=on?Math.max(0,num("goalInflation",6)):0;
   const inflated=target*Math.pow(1+inf/100,years), r=rate/100/12,n=years*12;
   const sip=inflated*r/((Math.pow(1+r,n)-1)*(1+r)), invested=sip*n;
-  $("goalSip").textContent=money(sip);$("goalCorpus").textContent=money(target);$("goalInflated").textContent=money(inflated);$("goalInvested").textContent=money(invested);$("goalReturns").textContent=money(inflated-invested);
+  $("goalSip").textContent=money(sip);$("goalCorpus").textContent=money(target);$("goalInflated").textContent=money(inflated);$("goalInvested").textContent=money(invested);$("goalReturns").textContent=money(inflated-invested);drawPairChart("goalChart","Invested",invested,"Returns",Math.max(0,inflated-invested));
 }
 function calcEMI(){
   const P=Math.max(1000,num("emiAmount",1000000)), annual=Math.max(0.01,num("emiRate",9)), years=Math.max(1,num("emiYears",10));
   const r=annual/100/12,n=years*12,emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1),total=emi*n;
-  $("emiMonthly").textContent=money(emi);$("emiPrincipal").textContent=money(P);$("emiInterest").textContent=money(total-P);$("emiTotal").textContent=money(total);
+  $("emiMonthly").textContent=money(emi);$("emiPrincipal").textContent=money(P);$("emiInterest").textContent=money(total-P);$("emiTotal").textContent=money(total);drawPairChart("emiChart","Principal",P,"Interest",Math.max(0,total-P));
 }
 function recalc(){if($("calc-sip"))calcSIP();if($("calc-lumpsum"))calcLS();if($("calc-goal"))calcGoal();if($("calc-emi"))calcEMI()}
 document.querySelectorAll("#calc-sip input,#calc-lumpsum input,#calc-goal input,#calc-emi input").forEach(i=>i.addEventListener("input",()=>{
